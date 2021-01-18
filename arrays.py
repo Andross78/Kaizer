@@ -143,3 +143,178 @@ def array_18(array):
         if i < array[-1]:
             return i
     return 0
+
+
+def array_19(array):
+    int_i = 0
+    n = len(array)
+    for i in range(1,n-1):
+        if array[i] > array[0] and array[i] < array[-1]:
+            int_i = i
+    return int_i
+
+
+def array_20(array,k,l):
+    result = 0
+    for i in range(k,l+1):
+        result += array[i]
+    return result
+
+
+def array_21(array,k,l):
+    amount = 0
+    summ = 0
+    for i in range(k,l+1):
+        summ += array[i]
+        amount += 1
+    return summ / amount
+
+
+def array_22(array,k,l):
+    n = len(array)
+    result = 0
+    for i in range(n):
+        if i < k or i > l:
+            result += array[i]
+    return result
+
+
+def array_23(array,k,l):
+    n = len(array)
+    summ = 0
+    amount = 0
+    for i in range(n):
+        if i < k or i > l:
+            summ += array[i]
+            amount += 1
+    return summ / amount
+
+
+def array_24(array):
+    n = len(array)
+    _min = array[0]
+    for i in range(n):
+        for j in range(i+1,n):
+            if array[i] > array[j]:
+                array[i], array[j] = array[j], array[i]
+    sub = array[1]-array[0]
+    for i in range(2,n):
+        if array[i] - array[i-1] == sub:
+            continue
+        else:
+            return 0
+    return sub
+        
+
+def array_25(array):
+    n = len(array)
+    _min = array[0]
+    for i in range(n):
+        for j in range(i+1,n):
+            if array[i] > array[j]:
+                array[i], array[j] = array[j], array[i]
+    div = array[1] // array[0]
+    for i in range(2,n):
+        if array[i] // array[i-1] == div:
+            continue
+        else:
+            return 0
+    return div
+
+
+def array_26(array):
+    n = len(array)
+    for i in range(1,n):
+        if (array[i] - array[i-1]) % 2 != 0:
+            continue
+        else:
+            return i
+    return 0
+
+
+def array_27(array):
+    n = len(array)
+    for i in range(1,n):
+        if (array[i] > 0) != (array[i-1] > 0):
+            continue
+        else:
+            return i
+    return 0
+
+
+def array_28(array):
+    n = len(array)
+    _min = array[0]
+    for i in range(2,n,2):
+        if _min > array[i]:
+            _min = array[i]
+    return _min
+    
+
+def array_29(array):
+    n = len(array)
+    _max = array[1]
+    for i in range(3,n,2):
+        if _max < array[i]:
+            _max = array[i]
+    return _max
+
+
+def array_30(array):
+    n = len(array)
+    amount = 0
+    ids = []
+    for i in range(1,n):
+        if array[i] < array[i-1]:
+            amount += 1
+            ids.append(i-1)
+    return ids
+
+
+def array_31(array):
+    n = len(array)
+    amount = 0
+    ids = []
+    for i in range(1,n):
+        if array[i] > array[i-1]:
+            amount += 1
+            ids.append(i)
+    return ids[::-1]
+
+
+def array_32(array):
+    n = len(array)
+    for i in range(1,n):
+        if array[i] < array[i-1] and array[i] < array[i+1]:
+            return i
+
+
+def array_33(array):
+    n = len(array)
+    for i in range(1,n):
+        if array[i] > array[i-1] and array[i] > array[i+1]:
+            return i
+
+
+def array_34(array):
+    n = len(array)
+    _max = None
+    for i in range(1,n-1):
+        if array[i] < array[i-1] and array[i] < array[i+1]:
+            if _max is None or _max < array[i]:
+                _max = array[i]
+    return _max
+
+
+def array_35(array):
+    n = len(array)
+    _min = None
+    for i in range(2,n-1):
+        if array[i] > array[i-1] and array[i] > array[i+1]:
+            if _min is None or _min > array[i]:
+                _min = array[i]
+    return _min
+
+
+
+
