@@ -316,5 +316,512 @@ def array_35(array):
     return _min
 
 
+def array_36(array):
+    n = len(array)
+    l_min = None 
+    l_max = None
+    _max = array[0]
+    for i in range(1,n-1):
+        if array[i] > array[i-1] and array[i] > array[i+1] or array[i] < array[i-1] and array[i] < array[i+1]:
+            continue
+        elif _max < array[i]:
+            _max = array[i]
+    if _max < array[-1]:
+        return array[-1]
+    return _max
+
+##########################
+def array_37(array):
+    n = len(array)
+    counter = 0
+    _raise = True
+    for i in range(1,n):
+        print(_raise)
+        if array[i] > array[i-1]:
+            if _raise:
+                counter += 1
+                _raise = False 
+        else:
+            _raise = True 
+    return counter
+
+#do 39
+##############
+def array_40(array, r):
+    n = len(array)
+    el = array[0]:
+    el_i = 0
+    for i in range(1,n):
+        if abs(el - r) > abs(array[i] - r):
+            el = array[i]
+            el_i = i
+    return el_i
 
 
+def array_41(array):
+    n = len(array)
+    int_1 = array[0]
+    int_2 = array[1]
+    _sum = int_1+int_2 
+    for i in range(2,n):
+        if _sum < array[i]+array[i-1]:
+            _sum = array[i]+array[i-1]
+            int_1, int_2 = array[i-1],array[i]
+    return int_1, int_2
+
+
+def array_42(array,r):
+    n = len(array)
+    int_1 = array[0]
+    int_2 = array[1]
+    _sum = int_1 + int_2
+    for i in range(2,n):
+        if abs(_sum - r) > abs((array[i-1]+array[i]) - r):
+            _sum = array[i-1] + array[i]
+            int_1,int_2 = array[i-1],array[i]
+    return int_1,int_2
+ 
+
+def array_47(array):
+    n = len(array)
+    uniq = n
+    for i in range(n):
+        for j in range(i+1,n):
+            if array[i] == array[j]:
+                uniq -= 1
+                break
+    return uniq
+
+
+def array_44(array):
+    n = len(array)
+    for i in range(n):
+        for j in range(i+1,n):
+            if array[i] == array[j]:
+                return i,j
+    return 0
+
+
+def array_45(array):
+    n = len(array)
+    int_1 = array[0]
+    int_2 = array[1]
+    sub = abs(int_1 - int_2)
+    for i in range(n):
+        for j in range(i+1,n):
+            if sub > abs(array[i]-array[j]):
+                sub = abs(array[i]-array[j])
+                int_1,int_2 = array[i],array[j]
+    return int_1,int_2
+
+
+def array_46(array,r):
+    n = len(array)
+    int_1 = array[0]
+    int_2 = array[1]
+    _sum = int_1 + int_2
+    for i in range(n):
+        for j in range(i+1,n):
+            if abs(_sum - r) > abs((array[i]+array[j]) - r):
+                _sum = array[i]+array[j]
+                int_1, int_2 = array[i],array[j]
+    return int_1,int_2
+
+
+def array_47(array):
+    n = len(array)
+    uniq = n
+    for i in range(n):
+        for j in range(i+1,n):
+            if array[i] == array[j]:
+                uniq -= 1
+                break
+    return uniq
+
+
+def array_48(array):
+    n = len(array)
+    uniq = n
+    first = True
+    for i in range(n):
+        for j in range(i+1,n):
+            if array[i] == array[j]:
+                if first:
+                    uniq -= 2
+                    first = False
+                else:
+                    uniq -= 1
+                break
+    return n-uniq
+
+
+def array_49(array):
+    n = len(array)
+    for i in range(n):
+        if array[i] < 0 or array[i] > n:
+            return i
+    return 0
+
+
+def array_50(array):
+    n = len(array)
+    amount = 0
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if array[i]> array[j]:
+                amount += 1
+    return amount
+
+
+def array_51(arr_a, arr_b):
+    n = len(arr_a)
+    for i in range(n):
+        arr_a[i],arr_b[i] = arr_b[i],arr_a[i]
+    return arr_a,arr_b
+
+
+def array_52(array):
+    n = len(array)
+    new_arr = []
+    for i in range(n):
+        if i < 5:
+            new_arr.append(array[i]*2)
+        else:
+            new_arr.append(array[i]/2)
+    return new_arr
+
+
+def array_53(arr_a, arr_b):
+    n = len(arr_a)
+    arr_c = []
+    for i in range(n):
+        if arr_a[i] > arr_b[i]:
+            arr_c.append(arr_a[i])
+        else:
+            arr_c.append(arr_b[i])
+    return arr_c
+
+
+def array_54(array):
+    '''prosto'''
+
+
+def array_55(array):
+    '''prosto'''
+
+
+def array_56(array):
+    '''prosto'''
+
+
+def array_57(array):
+    '''prosto'''
+
+
+def array_58(array):
+    n = len(array)
+    new_arr = []
+    int_i = 0
+    for i in range(n):
+        int_i += array[i]
+        new_arr.append(int_i)
+    return int_i
+
+
+def array_59(array):
+    n = len(array)
+    new_arr = []
+    int_i = 0
+    for i in range(n):
+        int_i += array[i]
+        new_arr.append(int_i/(i+1))
+    return new_arr
+
+
+def array_60(array):
+    n = len(array)
+    new_arr = []
+    for i in range(n):
+        int_i = array[i]
+        for j in range(i+1,n):
+            int_i += array[j]
+        new_arr.append(int_i)
+    return new_arr
+
+def array_61(array):
+    n = len(array)
+    new_arr = []
+    for i in range(n):
+        int_i = array[i]
+        div = 1
+        for j in range(i+1,n):
+            int_i += array[j]
+            div += 1
+        new_arr.append(int_i/div)
+    return new_arr
+
+
+def array_62(array):
+    '''prosto'''
+
+############################
+def array_63(arr_a, arr_b):
+    arr_c = []
+    n = len(arr_a)
+    for i in range(n):
+        for j in range(i,n):
+            if arr_a[i]>arr_b[j]:
+                arr_c.append(arr_b[j])
+            else:
+                arr_c.append(arr_a[i])
+                break
+    return arr_c
+        
+###########################
+#array64
+
+def array_65(array,k):
+    n = len(array)
+    for i in range(n):
+        array[i] += k
+    return array
+
+
+def array_66(array):
+    n = len(array)
+    first = True
+    for i in range(n):
+        if array[i] % 2 == 0:
+            if first:
+                even = array[i]
+                first = False
+                array[i] += even
+            else:
+                array[i] += even
+    return array
+
+######################
+def array_67(array):
+    n = len(array)
+    first = True
+    for i in range(0,n,-1):
+        if array[i] % 2 != 0:
+            if first:
+                odd = array[i]
+                first = False
+                array[i] += odd
+            else:
+                array[i] += odd
+    return array
+
+
+def array_68(array):
+    n = len(array)
+    _min = array[0]
+    _max = array[0]
+    min_i = 0
+    max_i = 0
+    for i in range(1,n):
+        if _min > array[i]:
+            _min = array[i]
+            min_i = i
+        if _max < array[i]:
+            _max = array[i]
+            max_i = i
+    array[min_i] = _max
+    array[max_i] = _min 
+    return array        
+
+
+def array_69(array):
+    n = len(array)
+    for i in range(0,n,2):
+        array[i], array[i+1] = array[i+1], array[i]
+    return array
+
+
+def array_70(array):
+    n = len(array)
+    half = n//2
+    array = array[half:]+array[:half]
+    return array
+
+
+def array_71(array):
+    return array[::-1]
+
+
+def array_72(array,k,l):
+    return array[:k-1]+array[l-1:k-2:-1]+array[l:]
+
+
+def array_73(array,k,l):
+    return array[:k]+array[l-2:k-1:-1]+array[l-1:]
+
+
+def array_74(array):
+    n = len(array)
+    _min = array[0]
+    _max = array[0]
+    min_i = 0
+    max_i = 0
+    for i in range(1,n):
+        if _min > array[i]:
+            _min = array[i]
+            min_i = i
+        if _max < array[i]:
+            _max = array[i]
+            max_i = i
+    if max_i > min_i:
+        array = array[:min_i+1]+[0]*(max_i-min_i-1)+array[max_i:]
+    else:
+        array = array[:max_i+1]+[0]*(min_i-max_i-1)+array[min_i:]
+    return array
+
+
+def array_75(array):
+    n = len(array)
+    _min = array[0]
+    _max = array[0]
+    min_i = 0
+    max_i = 0
+    for i in range(1,n):
+        if _min > array[i]:
+            _min = array[i]
+            min_i = i
+        if _max < array[i]:
+            _max = array[i]
+            max_i = i
+    if max_i > min_i:
+        array = array[:min_i]+array[max_i:min_i-1:-1]+array[max_i+1:]
+    else:
+        array = array[:max_i]+array[min_i:max_i-1:-1]+array[min_i+1:]
+    return array
+
+
+def array_76(array):
+    n = len(array)
+    for i in range(1,n-1):
+        if  array[i] > array[i-1] and array[i]> array[i+1]:
+            array[i] = 0
+    return array
+
+
+def array_77(array):
+    '''prosto'''
+
+
+def array_78(array):
+    n = len(array)
+    for i in range(n):
+        if i == 0:
+            array[i] = (array[i]+array[i+1])/2
+        elif i == n-1:
+            array[i] = (array[i]+array[i-1])/2
+        else:
+            array[i] = (array[i]+array[i+1]+array[i-1])/3
+    return array
+
+
+def array_79(array):
+    n = len(array)
+    for i in range(1,n):
+        array[-i] = array[-i-1]
+    array[0] = 0
+    return array
+
+
+def array_80(array):
+    n = len(array)
+    for i in range(n-1):
+        array[i]=array[i+1]
+    array[n-1] = 0
+    return array
+    
+############################
+def array_81(array,k):
+    n = len(array)
+    array = [0]*k + a[:n-k]
+    return array
+
+##############################
+def array_82(array,k):
+    n = len(array)
+    array = array[k:]+[0]*k
+    return array
+
+##############################
+def array_83(array):
+    n = len(array)
+    return [0]+array[:n-1]
+
+#############################
+def array_84(array):
+    n = len(array)
+    return array[1:n]+[0]
+
+
+#############################3
+def array_85(array,k):
+    ...
+
+
+#############################3
+def array_86(array,k):
+    ...
+
+
+def array_87(array):
+    n = len(array)
+    digit = array[0]
+    if digit > array[-1]:
+            array = array[1:]+[digit]
+    for i in range(2,n):
+        if digit > array[i-1] and digit < array[i]:
+            array = array[1:i]+[digit]+array[i:]
+            return array
+    return array
+
+
+def array_88(array):
+    n = len(array)
+    digit = array[-1]
+    if digit < array[0]:
+        array = [digit]+array[:-1]
+    for i in range(1,n-1):
+        if digit < array[i] and digit > array[i-1]:
+            array = array[:i]+[digit]+array[i:-1]
+            return array
+    return array
+    
+
+def array_89(array):
+    n = len(array)
+    digit_i = 0
+    for i in range(1,n):
+        if array[i]> array[i-1]:
+            digit = array[i]
+            digit_i = i
+            break
+    for i in range(n-1):
+        if digit > array[i]:
+            array = array[:i] + [digit] + array[i:digit_i] + array[digit_i+1:]
+            return array
+
+
+def array_90(array,k):
+    array.remove(array[k])
+    return array
+
+
+def array_91(array,k,l):
+    del array[k-1:l]
+    return array
+
+
+def array_92(array):
+    n = len(array)
+    for i in range(n):
+        if array[i] % 2 == 0:
+            array.remove[array[i]]
+    return len(array), array
