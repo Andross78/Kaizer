@@ -333,16 +333,20 @@ def array_36(array):
 ##########################
 def array_37(array):
     n = len(array)
+    if n < 0:
+        return 0
+
     counter = 0
-    _raise = True
+    _raise = False
     for i in range(1,n):
         print(_raise)
         if array[i] > array[i-1]:
-            if _raise:
+            if not _raise:
                 counter += 1
-                _raise = False 
+                _raise = True 
         else:
-            _raise = True 
+            _raise = False 
+
     return counter
 
 #do 39
@@ -568,13 +572,19 @@ def array_62(array):
 def array_63(arr_a, arr_b):
     arr_c = []
     n = len(arr_a)
-    for i in range(n):
-        for j in range(i,n):
-            if arr_a[i]>arr_b[j]:
-                arr_c.append(arr_b[j])
-            else:
-                arr_c.append(arr_a[i])
-                break
+    i = 0
+    j = 0
+    while i < n and j < n:
+        if arr_a[i]>arr_b[j]:
+            arr_c.append(arr_b[j])
+            j += 1
+        else:
+            arr_c.append(arr_a[i])
+            i += 1
+    if i == 5:
+        arr_c += arr_b[j:]
+    else:
+        arr_c += arr_a[i:]
     return arr_c
         
 ###########################
@@ -604,7 +614,7 @@ def array_66(array):
 def array_67(array):
     n = len(array)
     first = True
-    for i in range(0,n,-1):
+    for i in range(n-1,-1,-1):
         if array[i] % 2 != 0:
             if first:
                 odd = array[i]
@@ -753,7 +763,11 @@ def array_82(array,k):
 ##############################
 def array_83(array):
     n = len(array)
-    return [0]+array[:n-1]
+    last = array[n-1]
+    for i in range(n-1,0,-1):
+        array[i] = array[i-1]
+    array[0]  = array[last]   
+    # return [0]+array[:n-1]
 
 #############################
 def array_84(array):
@@ -825,3 +839,14 @@ def array_92(array):
         if array[i] % 2 == 0:
             array.remove[array[i]]
     return len(array), array
+
+
+def matrix_1(m,n):
+    primary = []
+    for i in range(1,m+1):
+        secondary =[]
+        for j in range(n):
+            secondary.append(i*10)
+        primary.append(secondary)
+    return primary
+            
